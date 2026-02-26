@@ -357,6 +357,77 @@ body {
     letter-spacing: 1px;
 }
 
+/* --- Sponsored By Section --- */
+.sponsored-by {
+    padding: 120px 8%;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.sponsor-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px;
+}
+
+.sponsor-header h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+}
+
+.sponsor-header p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    align-items: stretch;
+}
+
+.sponsor-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 180px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-8px);
+    background: #ffffff;
+    box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.sponsor-img {
+    width: 220px;
+    /* Normalized bounding box width */
+    height: 90px;
+    /* Normalized bounding box height */
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.7);
+    transition: all 0.4s ease;
+}
+
+.sponsor-card:hover .sponsor-img {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.08);
+}
+
+.shadow-soft {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
 .pulse {
     width: 12px;
     height: 12px;
@@ -397,9 +468,78 @@ body {
 
     .mega-section {
         padding: 80px 5%;
+        min-height: auto;
+    }
+
+    .image-side img {
+        max-width: 100%;
     }
 
     .price-side {
         text-align: center;
+    }
+
+    .sponsor-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        padding: 60px 20px 40px;
+    }
+
+    .page-title h1 {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+    }
+
+    .text-side h2 {
+        font-size: 2.2rem;
+    }
+
+    .text-side p {
+        font-size: 1.1rem;
+    }
+
+    .new-p {
+        font-size: 4rem;
+    }
+
+    .sponsor-header h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mega-section {
+        padding: 60px 20px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 18px 30px;
+    }
+
+    .tag {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    .sponsor-card {
+        height: 140px;
+        padding: 15px;
+    }
+
+    .sponsor-img {
+        width: 180px;
+        height: 70px;
+    }
+
+    .benefit-list li {
+        font-size: 1rem;
+    }
+
+    .deliverables-side h3 {
+        font-size: 1.6rem;
     }
 }
